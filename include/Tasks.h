@@ -2,7 +2,7 @@
 
 #include <string>
 
-enum TaskType {
+enum TaskType: uint8_t {
     none,
     A,
     B,
