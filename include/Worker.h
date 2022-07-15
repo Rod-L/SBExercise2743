@@ -6,7 +6,7 @@
 class Worker: public Employee {
 public:
     int taskId = 0;
-    taskType taskType = none;
+    TaskType taskType = none;
 
     void describeJob() const;
 };

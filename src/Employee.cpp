@@ -1,6 +1,6 @@
 #include "Employee.h"
 
-std::string NAMES[] = {
+const std::string NAMES[] = {
         "John",
         "Alfred",
         "Egor",
@@ -14,17 +14,10 @@ std::string NAMES[] = {
         "Natalia"
 };
 
-std::string* employeeName() {
-    auto name = new std::string(NAMES[rand() % 11]);
-    return name;
-}
+int Employee::EmployeeId = 0;
 
-int EMPLOYEE_ID = 0;
-int employeeId() {
-    ++EMPLOYEE_ID;
-    return EMPLOYEE_ID;
-}
-
-Employee::~Employee() {
-    delete name;
+Employee::Employee() {
+    ++Employee::EmployeeId;
+    name = NAMES[rand() % 11];
+    id = Employee::EmployeeId;
 }

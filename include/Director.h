@@ -4,10 +4,10 @@
 
 class Director: public Employee {
     int managersCount;
-    Manager** managers = nullptr;
+    Manager* managers;
 public:
 
-    Director(Manager** inManagers, int inManagersCount);
+    Director(Manager* inManagers, int inManagersCount);
 
     ~Director();
 

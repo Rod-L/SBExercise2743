@@ -2,13 +2,13 @@
 
 #include <string>
 
-enum taskType {
+enum TaskType {
     none,
     A,
     B,
     C
 };
 
-std::string taskTypeName(taskType val);
+std::string taskTypeName(TaskType val);
 
-taskType randomTaskType();
+TaskType randomTaskType();

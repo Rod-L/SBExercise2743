@@ -15,22 +15,12 @@ int main() {
         int workersAmount;
         std::cin >> workersAmount;
 
-        auto managers = new Manager *[managersAmount];
+        auto managers = new Manager[managersAmount];
         for (int i = 0; i < managersAmount; ++i) {
-            auto workers = new Worker *[workersAmount];
-            for (int j = 0; j < workersAmount; ++j) {
-                auto worker = new Worker;
-                worker->id = employeeId();
-                worker->name = employeeName();
-                workers[j] = worker;
-            }
-            auto manager = new Manager(workers, workersAmount);
-            manager->id = employeeId();
-            manager->name = employeeName();
-            managers[i] = manager;
+            auto workers = new Worker[workersAmount];
+            managers[i].setSubordinates(workers, workersAmount);
         }
         director = new Director(managers, managersAmount);
-        director->name = employeeName();
     }
 
     std::cout << "Available commands:\n"

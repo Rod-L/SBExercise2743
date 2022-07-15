@@ -2,14 +2,11 @@
 
 #include <string>
 
-std::string* employeeName();
-
-int employeeId();
-
 class Employee{
+    static int EmployeeId;
 public:
-    int id = 0;
-    std::string* name = nullptr;
+    int id;
+    std::string name;
 
-    ~Employee();
+    Employee();
 };

@@ -6,10 +6,10 @@
 
 class Manager: public Employee {
     int workersCount;
-    Worker** subordinates = nullptr;
+    Worker* subordinates;
 
 public:
-    Manager(Worker** inSubordinates, int inWorkersCount);
+    explicit Manager(Worker* inSubordinates = nullptr, int inWorkersCount = 0);
 
     ~Manager();
 
@@ -20,4 +20,6 @@ public:
     void stopTask(int taskId) const;
 
     void describeTasks() const;
+
+    void setSubordinates(Worker* workers, int count);
 };
